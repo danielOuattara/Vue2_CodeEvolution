@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Video 7</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>  {{greetings}} {{season}}  </h1>
+        <h1 >{{season}}</h1>
+        <h1 v-text="season"> </h1>
+        <h1 v-html="season">{{season}}</h1>
+        <h1 v-html="season"> </h1>
+
+        <p v-text="bolding"></p>
+        <p>{{bolding}}</p>
+
+        <p v-html="bolding"></p>
+        <p></p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+
+        vm = new Vue({
+            el: '#app',
+            data: {
+                name:'Daniel',
+                greetings: 'River is frozen ',
+                season: '<p>This winter</p>',
+                bolding: '<b> Code Evolution</b>'
+            }
+        });
+
+ 
+
+
+
+    </script>
+</body>
+</html>

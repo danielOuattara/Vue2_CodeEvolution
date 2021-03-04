@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Video 9</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1 v-bind:style='{color:highlightColor}'>Inline</h1>
+        <h1 v-bind:style='{color:highlightColor, padding: "10px", backgroundColor:"lightgreen"}'>Inline</h1>
+        <h1 v-bind:style='{fontSize:headerSize}'>Another Inline</h1>
+        <h1 v-bind:style='{fontSize}'>Another Font Size Inline</h1>
+
+        <h1 v-bind:style='{"font-size":headerSize}'>Another Third Inline</h1>
+        <h1 v-bind:style='{backgroundColor:highlightColor}'>background Color</h1>
+        <h1 v-bind:style='{backgroundColor:backgroundColor, color:textColor}'>background Color</h1>
+
+        <!-- using styling object -->
+        <h1 v-bind:style='styleObject'>using Styling Object</h1>
+        <h1 v-bind:style='{...styleObject}'>spread operator (...) Styling object</h1>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+
+        vm = new Vue({
+            el: '#app',
+            data: {
+                highlightColor:  'orange'  ,
+                backgroundColor: '#0000ff' ,
+                textColor:       '#fff'    ,
+                headerSize:      '30px'    ,
+                fontSize:        '50px'    ,
+
+                styleObject: {
+                    marginTop:         '50px',
+                    backgroundColor: 'yellow', 
+                    color:           'blue'  ,
+                    padding:         '15px'
+                }
+            }
+        });
+
+ 
+
+
+
+    </script>
+</body>
+</html>

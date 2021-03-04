@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Video 10</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1 v-bind:style='{color:highlightColor}'>Inline</h1>
+        <h1 v-bind:style='{backgroundColor:highlightColor}'>background Color</h1>
+        <h1 v-bind:style='{backgroundColor:backgroundColor, color:textColor}'>background Color</h1>
+
+
+        <!-- using styling object -->
+        <h1 v-bind:style='{...styleObject}'>background Color</h1>
+        <h1 v-bind:style='styleObject'>background Color</h1>
+
+        
+        <!-- using array syntax: to apply multiple styling object -->
+        <h1 v-bind:style='[ {...baseStyleObject}, {...successStyleObject}]'>background Color</h1>
+        <h1 v-bind:style='[baseStyleObject, successStyleObject]'>background Color</h1>
+        
+        <h1 v-bind:style='globalStyling'>background Color</h1>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+
+        vm = new Vue({
+            el: '#app',
+            data: {
+
+                highlightColor:  'orange',
+                backgroundColor: '#0000ff',
+                textColor:       '#fff',
+                styleObject: {
+                    backgroundColor: 'yellow', 
+                    color:           'red'
+                },
+
+                baseStyleObject: {
+                    fontSize: '50px',
+                    padding:  '10px'
+                },
+
+                successStyleObject: {
+                    color:           'green',
+                    backgroundColor: 'lightgreen',
+                    border:          '1px solid green'
+                },
+
+                globalStyling: [ 
+                     {
+                        fontSize: '50px',
+                        padding:  '10px'
+                    },
+
+                     {
+                        color:           'green',
+                        backgroundColor: 'lightgreen',
+                        border:          '1px solid green'
+                    },
+
+                ],
+
+                // globalStyling: [ {...baseStyleObject}, {...successStyleObject}  ]
+            }
+        });
+
+ 
+
+
+
+    </script>
+</body>
+</html>
